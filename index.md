@@ -13,7 +13,7 @@ I am a student learning Linux command line operations, Markdown documentation, G
 
 ## Course Assignments
 
-- [Assignment 1 Report](assignment1/report)
+- [Assignment 1 Markdown Report](assignment1/report)
 - [Assignment 1 PDF Report](assignment1/report.pdf)
 - [Assignment 1 Python Source Code](assignment1/matrix_multiply.py)
 - [Assignment 2 Report](assignment2-report)
