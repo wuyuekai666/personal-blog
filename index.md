@@ -3,7 +3,7 @@ layout: default
 title: WuYuekai's personal Blog
 ---
 
-# My Personal Blog
+# WuYuekai's personal Blog
 
 Welcome to my personal course website.
 
