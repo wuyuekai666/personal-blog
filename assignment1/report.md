@@ -5,10 +5,11 @@ title: Assignment 1 Report
 
 <style>
 .report-container {
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
   line-height: 1.75;
 }
+
 .info-card {
   background: #f6f8fa;
   border-left: 5px solid #0969da;
@@ -16,6 +17,7 @@ title: Assignment 1 Report
   border-radius: 10px;
   margin: 24px 0;
 }
+
 .section-card {
   background: #ffffff;
   border: 1px solid #d8dee4;
@@ -24,13 +26,53 @@ title: Assignment 1 Report
   margin: 28px 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
-h1 { font-size: 2.4em; margin-bottom: 0.3em; }
-h2 { border-bottom: 2px solid #d8dee4; padding-bottom: 8px; margin-top: 12px; }
-table { width: 100%; border-collapse: collapse; margin-top: 16px; margin-bottom: 16px; }
-th { background: #f6f8fa; }
-th, td { border: 1px solid #d8dee4; padding: 10px 12px; vertical-align: top; }
-code { background: #f6f8fa; padding: 2px 5px; border-radius: 4px; }
-pre { background: #f6f8fa; padding: 16px; border-radius: 10px; overflow-x: auto; }
+
+.report-container h1 {
+  font-size: 2.3em;
+  margin-bottom: 0.4em;
+}
+
+.report-container h2 {
+  border-bottom: 2px solid #d8dee4;
+  padding-bottom: 8px;
+  margin-top: 8px;
+}
+
+.report-container h3 {
+  margin-top: 20px;
+}
+
+.report-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.report-container th {
+  background: #f6f8fa;
+}
+
+.report-container th,
+.report-container td {
+  border: 1px solid #d8dee4;
+  padding: 10px 12px;
+  vertical-align: top;
+}
+
+.report-container code {
+  background: #f6f8fa;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.report-container pre {
+  background: #f6f8fa;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
 .badge {
   display: inline-block;
   background: #e7f0ff;
@@ -38,19 +80,18 @@ pre { background: #f6f8fa; padding: 16px; border-radius: 10px; overflow-x: auto;
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 0.9em;
-  margin-right: 6px;
-  margin-top: 8px;
+  margin: 6px 6px 0 0;
 }
 </style>
 
-<div class="report-container">
+<div class="report-container" markdown="1">
 
 # Assignment 1: Command Line & Documentation
 
-<div class="info-card">
+<div class="info-card" markdown="1">
 
-<strong>Student Name:</strong> WuYuekai  
-<strong>Student ID:</strong> ZY2557209  
+**Student Name:** WuYuekai  
+**Student ID:** ZY2557209  
 
 <span class="badge">Command Line</span>
 <span class="badge">Markdown</span>
@@ -59,7 +100,7 @@ pre { background: #f6f8fa; padding: 16px; border-radius: 10px; overflow-x: auto;
 
 </div>
 
-<div class="section-card">
+<div class="section-card" markdown="1">
 
 ## 1. Project Overview
 
@@ -77,7 +118,7 @@ The main goals of this assignment are:
 
 </div>
 
-<div class="section-card">
+<div class="section-card" markdown="1">
 
 ## 2. System Configuration
 
@@ -107,7 +148,7 @@ powershell -Command "Get-CimInstance Win32_OperatingSystem"
 
 </div>
 
-<div class="section-card">
+<div class="section-card" markdown="1">
 
 ## 3. Implementation Details
 
@@ -137,7 +178,7 @@ For square matrices of size `n × n`, the time complexity is `O(n³)`.
 
 </div>
 
-<div class="section-card">
+<div class="section-card" markdown="1">
 
 ## 4. Python Language Implementation
 
@@ -241,7 +282,7 @@ Expected result:
 
 </div>
 
-<div class="section-card">
+<div class="section-card" markdown="1">
 
 ## 5. Algorithm Verification
 
@@ -284,7 +325,7 @@ The program output matches the manually calculated result. Therefore, the implem
 
 </div>
 
-<div class="section-card">
+<div class="section-card" markdown="1">
 
 ## 6. C Language Implementation and Performance Analysis
 
@@ -306,7 +347,7 @@ Therefore, this report only includes the required Python implementation.
 
 </div>
 
-<div class="section-card">
+<div class="section-card" markdown="1">
 
 ## 7. Conclusion
 
@@ -320,7 +361,7 @@ Overall, this assignment helped me become more familiar with command line operat
 
 </div>
 
-<div class="section-card">
+<div class="section-card" markdown="1">
 
 ## 8. References
 
@@ -331,14 +372,14 @@ Overall, this assignment helped me become more familiar with command line operat
 
 </div>
 
-<div class="section-card">
+<div class="section-card" markdown="1">
 
 ## 9. Appendix
 
 The related files are available on my personal website:
 
 - [Python Source Code](matrix_multiply.py)
-- [PDF Report](report.pdf)
+- [PDF Report](report.pdf?v=5)
 
 </div>
 
