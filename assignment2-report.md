@@ -1,3 +1,8 @@
+---
+layout: page
+title: Assignment 2 Report
+---
+
 \# Assignment 2 Report: Static Personal Blog Website
 
 

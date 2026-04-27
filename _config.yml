@@ -1,0 +1,12 @@
+title: My Personal Blog
+description: A static personal blog website for course assignments
+theme: minima
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+
+header_pages:
+  - index.md
+  - assignment2-report.md
