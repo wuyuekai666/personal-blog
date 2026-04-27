@@ -1,12 +1,9 @@
 title: My Personal Blog
-description: A static personal blog website for course assignments
-theme: minima
+description: Course assignment website for command line, Markdown, Python, Git, and GitHub Pages
+
+theme: jekyll-theme-cayman
 
 markdown: kramdown
 
-plugins:
-  - jekyll-feed
-
-header_pages:
-  - index.md
-  - assignment2-report.md
+url: "https://wuyuekai666.github.io"
+baseurl: "/personal-blog"

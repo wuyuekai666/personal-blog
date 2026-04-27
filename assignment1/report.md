@@ -1,329 +1,193 @@
 ---
-layout: page
+layout: default
 title: Assignment 1 Report
 ---
 
-# Remote Development Project Report
+# Assignment 1: Command Line & Documentation
 
+**Student Name**: Your Name  
+**Student ID**: Your Student ID  
 
+## 1. Project Overview
 
-\*\*Student Name\*\*: WuYuekai  
+The objective of this assignment is to practice basic remote development skills, including command line operations, Markdown documentation, and Python programming.
 
-\*\*Student ID\*\*: ZY2557209
+In this project, I implemented a simple matrix multiplication program using Python. I also collected system configuration information from my computer and documented the implementation and verification process in Markdown.
 
+## 2. System Configuration
 
-
-\## System Configuration
-
-
-
-This project was completed on Windows using Git Bash. Some Linux-specific commands such as `lscpu` and `free -h` were not available in this environment, so PowerShell commands were used to collect CPU, memory, and operating system information.
-
-
+This assignment was completed on a Windows computer using Git Bash. Some Linux-specific commands, such as `lscpu` and `free -h`, were not available in my environment. Therefore, PowerShell commands were used to collect part of the system information.
 
 | Item | Command | Result |
-
 |---|---|---|
-
-| CPU Model | `powershell -Command "Get-CimInstance Win32\_Processor \\| Select-Object -ExpandProperty Name"` | Intel(R) Core(TM) i7-14700HX |
-
-| Memory Size | `powershell -Command "\[math]::Round((Get-CimInstance Win32\_ComputerSystem).TotalPhysicalMemory / 1GB, 2)"` | 31.78 GB |
-
-| Operating System | `powershell -Command "Get-CimInstance Win32\_OperatingSystem \\| Select-Object -ExpandProperty Caption"` | Microsoft Windows 11 家庭中文版 |
-
-| OS Version | `cmd /c ver` | Microsoft Windows \[版本 10.0.26200.8246] |
-
-| Git Bash System Info | `uname -a` | MINGW64\_NT-10.0-26200 kk 3.6.6-1cdd4371.x86\_64 2026-01-15 22:20 UTC x86\_64 Msys |
-
+| CPU Model | `Get-CimInstance Win32_Processor` | Intel(R) Core(TM) i7-14700HX |
+| Memory Size | `Get-CimInstance Win32_ComputerSystem` | 31.78 GB |
+| Operating System | `Get-CimInstance Win32_OperatingSystem` | Microsoft Windows 11 家庭中文版 |
+| OS Version | `cmd /c ver` | Microsoft Windows [版本 10.0.26200.8246] |
+| Git Bash System Info | `uname -a` | MINGW64_NT-10.0-26200 kk 3.6.6-1cdd4371.x86_64 2026-01-15 22:20 UTC x86_64 Msys |
 | Compiler Version | `gcc --version` | GCC not installed |
-
 | Python Version | `python --version` | Python 3.12.10 |
 
+## 3. Implementation Details
 
+Matrix multiplication is a basic operation in linear algebra. If matrix `A` has size `m × n` and matrix `B` has size `n × p`, then the result matrix `C` has size `m × p`.
 
-\## Implementation Details
+Each element in the result matrix is calculated by multiplying one row of matrix `A` with one column of matrix `B`.
 
+For example:
 
+```text
+C[i][j] = A[i][0] * B[0][j] + A[i][1] * B[1][j] + ... + A[i][n-1] * B[n-1][j]
+The Python program uses three nested loops:
 
-The main task of this project is to implement matrix multiplication using an interpreted language. I used Python because it is easy to read, simple to run, and suitable for demonstrating basic algorithms.
+The outer loop selects the row of matrix A.
+The middle loop selects the column of matrix B.
+The inner loop calculates the sum of products.
+4. Python Language Implementation
+Source Code
 
+# matrix_multiply.py
+# This program demonstrates matrix multiplication using Python.
 
+def matrix_multiply(A, B):
+    """
+    Multiply two matrices A and B.
 
-Matrix multiplication takes two matrices A and B. If A has size m × n and B has size n × p, the result matrix C has size m × p. Each element of C is calculated by multiplying one row from A with one column from B and summing the products.
+    A is an m x n matrix.
+    B is an n x p matrix.
+    The result C is an m x p matrix.
+    """
 
+    rows_A = len(A)
+    cols_A = len(A[0])
+    rows_B = len(B)
+    cols_B = len(B[0])
 
+    # Check whether the two matrices can be multiplied
+    if cols_A != rows_B:
+        raise ValueError("Matrix dimensions do not match for multiplication.")
 
-\## Python Language Implementation
+    # Create a result matrix filled with zeros
+    C = [[0 for _ in range(cols_B)] for _ in range(rows_A)]
 
+    # Matrix multiplication:
+    # C[i][j] = sum(A[i][k] * B[k][j])
+    for i in range(rows_A):
+        for j in range(cols_B):
+            for k in range(cols_A):
+                C[i][j] += A[i][k] * B[k][j]
 
+    return C
 
-\### Source Code
 
+def print_matrix(M):
+    """Print a matrix row by row."""
+    for row in M:
+        print(row)
 
 
-The Python source code is shown below.
+if __name__ == "__main__":
+    A = [
+        [1, 2],
+        [3, 4]
+    ]
 
+    B = [
+        [5, 6],
+        [7, 8]
+    ]
 
+    print("Matrix A:")
+    print_matrix(A)
 
-```python
+    print("\nMatrix B:")
+    print_matrix(B)
 
-\# matrix\_multiply.py
+    C = matrix_multiply(A, B)
 
-\# This program demonstrates matrix multiplication using Python.
+    print("\nResult of A x B:")
+    print_matrix(C)
 
+    print("\nExpected result:")
+    print("[19, 22]")
+    print("[43, 50]")
+Execution Command
 
+The Python program can be executed with the following command:
+python matrix_multiply.py
 
-def matrix\_multiply(A, B):
-
-&#x20;   """
-
-&#x20;   Multiply two matrices A and B.
-
-
-
-&#x20;   A is an m x n matrix.
-
-&#x20;   B is an n x p matrix.
-
-&#x20;   The result C is an m x p matrix.
-
-&#x20;   """
-
-
-
-&#x20;   rows\_A = len(A)
-
-&#x20;   cols\_A = len(A\[0])
-
-&#x20;   rows\_B = len(B)
-
-&#x20;   cols\_B = len(B\[0])
-
-
-
-&#x20;   # Check whether the two matrices can be multiplied
-
-&#x20;   if cols\_A != rows\_B:
-
-&#x20;       raise ValueError("Matrix dimensions do not match for multiplication.")
-
-
-
-&#x20;   # Create a result matrix filled with zeros
-
-&#x20;   C = \[\[0 for \_ in range(cols\_B)] for \_ in range(rows\_A)]
-
-
-
-&#x20;   # Matrix multiplication:
-
-&#x20;   # C\[i]\[j] = sum(A\[i]\[k] \* B\[k]\[j])
-
-&#x20;   for i in range(rows\_A):
-
-&#x20;       for j in range(cols\_B):
-
-&#x20;           for k in range(cols\_A):
-
-&#x20;               C\[i]\[j] += A\[i]\[k] \* B\[k]\[j]
-
-
-
-&#x20;   return C
-
-
-
-
-
-def print\_matrix(M):
-
-&#x20;   """Print a matrix row by row."""
-
-&#x20;   for row in M:
-
-&#x20;       print(row)
-
-
-
-
-
-if \_\_name\_\_ == "\_\_main\_\_":
-
-&#x20;   # Test matrices
-
-&#x20;   A = \[
-
-&#x20;       \[1, 2],
-
-&#x20;       \[3, 4]
-
-&#x20;   ]
-
-
-
-&#x20;   B = \[
-
-&#x20;       \[5, 6],
-
-&#x20;       \[7, 8]
-
-&#x20;   ]
-
-
-
-&#x20;   print("Matrix A:")
-
-&#x20;   print\_matrix(A)
-
-
-
-&#x20;   print("\\nMatrix B:")
-
-&#x20;   print\_matrix(B)
-
-
-
-&#x20;   C = matrix\_multiply(A, B)
-
-
-
-&#x20;   print("\\nResult of A x B:")
-
-&#x20;   print\_matrix(C)
-
-
-
-&#x20;   print("\\nExpected result:")
-
-&#x20;   print("\[19, 22]")
-
-&#x20;   print("\[43, 50]")
-
-The Python script can be executed with the following command:
-
-python matrix\_multiply.py
-
-The output is:
-
-
-
+Program Output
 Matrix A:
-
-\[1, 2]
-
-\[3, 4]
-
-
+[1, 2]
+[3, 4]
 
 Matrix B:
-
-\[5, 6]
-
-\[7, 8]
-
-
+[5, 6]
+[7, 8]
 
 Result of A x B:
-
-\[19, 22]
-
-\[43, 50]
-
-
+[19, 22]
+[43, 50]
 
 Expected result:
+[19, 22]
+[43, 50]
+5. Algorithm Verification
 
-\[19, 22]
+To verify the correctness of the matrix multiplication algorithm, I used a small 2 × 2 matrix example.
 
-\[43, 50]
+The input matrices are:
 
-Algorithm Verification
+A = [[1, 2],
+     [3, 4]]
 
-
-
-To verify the correctness of the matrix multiplication algorithm, I used a small 2 × 2 matrix example that can be calculated manually.
-
-
-
-The test matrices are:
-
-
-
-A = \[\[1, 2],
-
-&#x20;    \[3, 4]]
-
-
-
-B = \[\[5, 6],
-
-&#x20;    \[7, 8]]
-
-
+B = [[5, 6],
+     [7, 8]]
 
 The expected result is:
 
-
-
-C = \[\[19, 22],
-
-&#x20;    \[43, 50]]
-
-
+C = [[19, 22],
+     [43, 50]]
 
 Manual calculation:
 
+C[0][0] = 1 × 5 + 2 × 7 = 19
+C[0][1] = 1 × 6 + 2 × 8 = 22
+C[1][0] = 3 × 5 + 4 × 7 = 43
+C[1][1] = 3 × 6 + 4 × 8 = 50
 
+The program output matches the manually calculated result. Therefore, the matrix multiplication implementation is correct for this test case.
 
-C\[0]\[0] = 1 × 5 + 2 × 7 = 19
+6. C Language Implementation and Performance Analysis
 
-C\[0]\[1] = 1 × 6 + 2 × 8 = 22
+I did not complete the optional C language implementation because GCC was not installed in my current environment.
 
-C\[1]\[0] = 3 × 5 + 4 × 7 = 43
+When I executed:
 
-C\[1]\[1] = 3 × 6 + 4 × 8 = 50
+gcc --version
 
+the result was:
 
+bash: gcc: command not found
 
-The program output matches the manually calculated result. Therefore, the implementation is correct for this test case.
+Therefore, this report only includes the required Python implementation.
 
+7. Conclusion
 
+Through this assignment, I practiced using command line tools, writing Markdown documentation, and implementing a basic algorithm in Python.
 
-C Language Implementation and Performance Analysis (bonus)
+I learned how matrix multiplication works through three nested loops. I also learned how to verify a program by comparing its output with a manually calculated result.
 
+In addition, I learned that different development environments may provide different command line tools. Since my environment was Windows with Git Bash, some Linux commands were unavailable, so I used PowerShell commands as alternatives.
 
-
-I did not complete the optional C language implementation because GCC was not installed in my current environment. The required command gcc --version returned command not found.
-
-
-
-Conclusion
-
-
-
-In this assignment, I practiced using command line tools, writing Markdown documentation, and implementing a basic matrix multiplication algorithm in Python. I also learned how to collect system information from the command line. Since my environment was Windows with Git Bash, I used PowerShell commands to collect some system information that would normally be collected using Linux commands.
-
-
-
-Through the Python implementation, I learned how matrix multiplication works using three nested loops. I also verified the correctness of the algorithm by comparing the program output with a manually calculated result.
-
-
-
-References
-
-Python documentation: https://docs.python.org/3/
-
-Git documentation: https://git-scm.com/doc
-
+8. References
+Python Documentation: https://docs.python.org/3/
+Git Documentation: https://git-scm.com/doc
 Markdown Guide: https://www.markdownguide.org/
+Microsoft PowerShell Documentation: https://learn.microsoft.com/en-us/powershell/
+9. Appendix
 
-Microsoft PowerShell documentation: https://learn.microsoft.com/en-us/powershell/
+The source code and report files are available on my personal website:
 
-Appendix
-
-Additional Notes
-
-
-
-This project was completed in a Windows environment using Git Bash. Some Linux-specific commands were unavailable, so equivalent PowerShell commands were used when necessary.
-
+Python Source Code
+PDF Report
