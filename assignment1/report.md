@@ -3,12 +3,63 @@ layout: default
 title: Assignment 1 Report
 ---
 
+<style>
+.report-container {
+  max-width: 960px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+.info-card {
+  background: #f6f8fa;
+  border-left: 5px solid #0969da;
+  padding: 18px 24px;
+  border-radius: 10px;
+  margin: 24px 0;
+}
+.section-card {
+  background: #ffffff;
+  border: 1px solid #d8dee4;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 28px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+h1 { font-size: 2.4em; margin-bottom: 0.3em; }
+h2 { border-bottom: 2px solid #d8dee4; padding-bottom: 8px; margin-top: 12px; }
+table { width: 100%; border-collapse: collapse; margin-top: 16px; margin-bottom: 16px; }
+th { background: #f6f8fa; }
+th, td { border: 1px solid #d8dee4; padding: 10px 12px; vertical-align: top; }
+code { background: #f6f8fa; padding: 2px 5px; border-radius: 4px; }
+pre { background: #f6f8fa; padding: 16px; border-radius: 10px; overflow-x: auto; }
+.badge {
+  display: inline-block;
+  background: #e7f0ff;
+  color: #0969da;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.9em;
+  margin-right: 6px;
+  margin-top: 8px;
+}
+</style>
+
+<div class="report-container">
+
 # Assignment 1: Command Line & Documentation
 
-**Student Name**: Your Name  
-**Student ID**: Your Student ID  
+<div class="info-card">
 
----
+<strong>Student Name:</strong> WuYuekai  
+<strong>Student ID:</strong> ZY2557209  
+
+<span class="badge">Command Line</span>
+<span class="badge">Markdown</span>
+<span class="badge">Python</span>
+<span class="badge">Matrix Multiplication</span>
+
+</div>
+
+<div class="section-card">
 
 ## 1. Project Overview
 
@@ -18,29 +69,45 @@ In this project, I implemented a simple matrix multiplication program using Pyth
 
 The main goals of this assignment are:
 
-- to practice command line operations
-- to write technical documentation using Markdown
-- to implement matrix multiplication in Python
-- to verify the correctness of the algorithm
-- to publish the report on a personal website
+- Practice command line operations
+- Write technical documentation using Markdown
+- Implement matrix multiplication in Python
+- Verify the correctness of the algorithm
+- Publish the report on a personal website
 
----
+</div>
+
+<div class="section-card">
 
 ## 2. System Configuration
 
 This assignment was completed on a Windows computer using Git Bash. Some Linux-specific commands, such as `lscpu` and `free -h`, were not available in my environment. Therefore, PowerShell commands were used to collect part of the system information.
 
-| Item | Command | Result |
-|---|---|---|
-| CPU Model | `powershell -Command "Get-CimInstance Win32_Processor \| Select-Object -ExpandProperty Name"` | Intel(R) Core(TM) i7-14700HX |
-| Memory Size | `powershell -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB, 2)"` | 31.78 GB |
-| Operating System | `powershell -Command "Get-CimInstance Win32_OperatingSystem \| Select-Object -ExpandProperty Caption"` | Microsoft Windows 11 家庭中文版 |
-| OS Version | `cmd /c ver` | Microsoft Windows [版本 10.0.26200.8246] |
-| Git Bash System Info | `uname -a` | MINGW64_NT-10.0-26200 kk 3.6.6-1cdd4371.x86_64 2026-01-15 22:20 UTC x86_64 Msys |
-| Compiler Version | `gcc --version` | GCC not installed |
-| Python Version | `python --version` | Python 3.12.10 |
+| Item | Result |
+|---|---|
+| CPU Model | Intel(R) Core(TM) i7-14700HX |
+| Memory Size | 31.78 GB |
+| Operating System | Microsoft Windows 11 家庭中文版 |
+| OS Version | Microsoft Windows [版本 10.0.26200.8246] |
+| Git Bash System Info | MINGW64_NT-10.0-26200 kk 3.6.6-1cdd4371.x86_64 |
+| Compiler Version | GCC not installed |
+| Python Version | Python 3.12.10 |
 
----
+The commands used to collect the information included:
+
+```bash
+python --version
+gcc --version
+uname -a
+cmd /c ver
+powershell -Command "Get-CimInstance Win32_Processor"
+powershell -Command "Get-CimInstance Win32_ComputerSystem"
+powershell -Command "Get-CimInstance Win32_OperatingSystem"
+```
+
+</div>
+
+<div class="section-card">
 
 ## 3. Implementation Details
 
@@ -60,23 +127,17 @@ The algorithm uses three nested loops:
 
 | Loop | Purpose |
 |---|---|
-| Outer loop | Selects the row of matrix `A` |
-| Middle loop | Selects the column of matrix `B` |
+| Outer loop | Selects the row of matrix A |
+| Middle loop | Selects the column of matrix B |
 | Inner loop | Calculates the sum of products |
 
-The time complexity of this basic matrix multiplication algorithm is:
+The time complexity of this basic matrix multiplication algorithm is `O(m × n × p)`.
 
-```text
-O(m × n × p)
-```
+For square matrices of size `n × n`, the time complexity is `O(n³)`.
 
-For square matrices of size `n × n`, the time complexity is:
+</div>
 
-```text
-O(n³)
-```
-
----
+<div class="section-card">
 
 ## 4. Python Language Implementation
 
@@ -124,7 +185,6 @@ def print_matrix(M):
 
 
 if __name__ == "__main__":
-    # Test matrices
     A = [
         [1, 2],
         [3, 4]
@@ -179,7 +239,9 @@ Expected result:
 [43, 50]
 ```
 
----
+</div>
+
+<div class="section-card">
 
 ## 5. Algorithm Verification
 
@@ -220,7 +282,9 @@ The program output is:
 
 The program output matches the manually calculated result. Therefore, the implementation is correct for this test case.
 
----
+</div>
+
+<div class="section-card">
 
 ## 6. C Language Implementation and Performance Analysis
 
@@ -240,7 +304,9 @@ bash: gcc: command not found
 
 Therefore, this report only includes the required Python implementation.
 
----
+</div>
+
+<div class="section-card">
 
 ## 7. Conclusion
 
@@ -252,16 +318,20 @@ I also learned that different development environments may provide different com
 
 Overall, this assignment helped me become more familiar with command line operations, Markdown documentation, Python programming, and basic algorithm verification.
 
----
+</div>
+
+<div class="section-card">
 
 ## 8. References
 
-- Python Documentation: <https://docs.python.org/3/>
-- Git Documentation: <https://git-scm.com/doc>
-- Markdown Guide: <https://www.markdownguide.org/>
-- Microsoft PowerShell Documentation: <https://learn.microsoft.com/en-us/powershell/>
+- [Python Documentation](https://docs.python.org/3/)
+- [Git Documentation](https://git-scm.com/doc)
+- [Markdown Guide](https://www.markdownguide.org/)
+- [Microsoft PowerShell Documentation](https://learn.microsoft.com/en-us/powershell/)
 
----
+</div>
+
+<div class="section-card">
 
 ## 9. Appendix
 
@@ -269,3 +339,7 @@ The related files are available on my personal website:
 
 - [Python Source Code](matrix_multiply.py)
 - [PDF Report](report.pdf)
+
+</div>
+
+</div>
