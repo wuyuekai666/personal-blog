@@ -3,7 +3,7 @@ layout: page
 title: Assignment 1 Report
 ---
 
-\# Remote Development Project Report
+# Remote Development Project Report
 
 
 
