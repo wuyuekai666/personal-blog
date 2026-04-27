@@ -1,6 +1,6 @@
 ---
 layout: default
-title: My Personal Blog
+title: WuYuekai's personal Blog
 ---
 
 # My Personal Blog
@@ -27,7 +27,7 @@ This assignment focuses on command line operations, Markdown documentation, Pyth
 
 - [Assignment 1 Report Web Page](assignment1/report)
 - [Assignment 1 Markdown Source](assignment1/report.md)
-- [Assignment 1 PDF Report](assignment1/report.pdf)
+- [Assignment 1 PDF Report](assignment1/report.pdf?v=5)
 - [Python Source Code](assignment1/matrix_multiply.py)
 
 ### Assignment 2: Static Personal Blog Website
