@@ -81,6 +81,23 @@ title: Assignment 3 Report
   font-size: 0.9em;
   margin: 6px 6px 0 0;
 }
+
+.screenshot {
+  margin: 18px 0 8px 0;
+}
+
+.screenshot img {
+  width: 100%;
+  border: 1px solid #d8dee4;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.screenshot-caption {
+  color: #57606a;
+  font-size: 0.95em;
+  margin-top: 8px;
+}
 </style>
 
 <div class="report-container">
@@ -148,6 +165,12 @@ title: Assignment 3 Report
     explain a pytest file and suggested commands for running the tests. This shows that the online
     agent can analyze project files and provide useful development suggestions.
   </p>
+  <div class="screenshot">
+    <img src="assignment3/images/vscode_continue.png" alt="DeepSeek Chat used in Continue to analyze pytest code">
+    <p class="screenshot-caption">
+      Figure 1. DeepSeek Chat was connected in the Continue extension and used to analyze the pytest file.
+    </p>
+  </div>
 </div>
 
 <div class="section-card">
@@ -187,6 +210,12 @@ ollama run qwen2.5:0.5b</code></pre>
   </p>
   <p>It also suggested a command for running the tests:</p>
   <pre><code>python -m pytest test_calculator.py -v</code></pre>
+  <div class="screenshot">
+    <img src="assignment3/images/vscode_continue.png" alt="VS Code Continue integration screenshot">
+    <p class="screenshot-caption">
+      Figure 2. VS Code IDE integration with Continue. The assistant explained the test code and suggested pytest commands.
+    </p>
+  </div>
 </div>
 
 <div class="section-card">
