@@ -37,6 +37,16 @@ This assignment focuses on building and deploying a static personal website usin
 - [Assignment 2 Report Web Page](assignment2-report)
 - [Assignment 2 Markdown Source](assignment2-report.md)
 
+### Assignment 3: Deployment and Integration of AI Agents
+
+This assignment focuses on deploying online and local LLMs, integrating AI agents into VS Code, and comparing their usefulness in a coding workflow.
+
+- [Assignment 3 Report Web Page](assignment3-report)
+- [Assignment 3 Markdown Source](assignment3-report.md)
+- [DeepSeek Agent Python Source Code](assignment3/deepseek_agent.py)
+- [Calculator Source Code](assignment3/calculator.py)
+- [Calculator Test Code](assignment3/test_calculator.py)
+
 ## Website Deployment
 
 This website is deployed at:
