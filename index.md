@@ -47,6 +47,16 @@ This assignment focuses on deploying online and local LLMs, integrating AI agent
 - [Calculator Source Code](assignment3/calculator.py)
 - [Calculator Test Code](assignment3/test_calculator.py)
 
+### Assignment 4: Developing an AI-Assisted Application
+
+This assignment focuses on building an academic/research software tool with AI-assisted development. My project is a Streamlit-based eVTOL landing-site selection and path-planning visualization system.
+
+- [Assignment 4 Project Page](assignment4/)
+- [Assignment 4 Report Web Page](assignment4-report)
+- [Assignment 4 Markdown Source](assignment4-report.md)
+- [Assignment 4 Source ZIP](assignment4/eVTOL_site_selection_source.zip)
+- [Assignment 4 Presentation PPTX](assignment4/eVTOL-System-Overview.pptx)
+
 ## Website Deployment
 
 This website is deployed at:

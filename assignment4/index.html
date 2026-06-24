@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eVTOL Site Selection and Path Planning</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Assignment 4 · Option B · Academic / Research Tool</p>
+      <h1>2D eVTOL Site Selection and Path Planning Visualization System</h1>
+      <p>
+        A Streamlit-based research application for urban low-altitude mobility planning.
+        It combines demand generation, K-means candidate site creation, genetic-algorithm
+        site selection, and A* / RRT* path planning comparison.
+      </p>
+      <div class="actions">
+        <a href="../assignment4-report">Read Report</a>
+        <a href="eVTOL_site_selection_source.zip">Download Source ZIP</a>
+        <a href="eVTOL-System-Overview.pptx">Download Presentation</a>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article>
+        <h2>Module 1</h2>
+        <h3>Landing Site Selection</h3>
+        <p>
+          Generates passenger demand points, creates risk and cost fields, clusters demand with
+          K-means, and uses a genetic algorithm to select final eVTOL landing sites.
+        </p>
+      </article>
+      <article>
+        <h2>Module 2</h2>
+        <h3>Path Planning</h3>
+        <p>
+          Reuses the selected sites as starting points and compares A* and RRT* routes to a fixed
+          airport connection point with length, risk, cost, runtime, and tortuosity metrics.
+        </p>
+      </article>
+      <article>
+        <h2>Run Locally</h2>
+        <h3>Streamlit Application</h3>
+        <pre><code>pip install -r requirements.txt
+streamlit run main.py</code></pre>
+        <p>On Windows, the packaged source also includes <code>run_app.bat</code>.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
